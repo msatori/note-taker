@@ -44,14 +44,22 @@ router.post('/notes', (req, res) => {
   })
 });
 
-route.delete('/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
   noteData = fs.readFileSync('./db/db.json','utf8');
 
   noteData = JSON.parse(noteData);
 
   noteData = noteData.filter(function(note) {
-    return noteData.id  
-  })
+    return note.id !== req.params.id;
+  });
+
+  noteData = JSON.stringify(noteData);
+
+  fs.writeFile('./db/db.json', noteData, 'utf8', (err) => {
+    if (err) throw err;
+  });
+
+  res.send(JSON.parse(noteData));
 
 })
 
