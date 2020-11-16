@@ -11,8 +11,5 @@
   "dependencies": {
     "check-node-version": "^4.0.3",
     "express": "^4.16.4"
-  },
-  "devDependencies": {
-    "uuid": "^3.3.3"
   }
 }
