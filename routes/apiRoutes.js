@@ -2,22 +2,20 @@
 const db = require('../db/db.json');
 const fs = require('fs');
 const router = require('express').Router();
-const uuid = require('uuid/v1')
+const { v4: uuidv4 } = require('uuid');
 
 
 
-// app.use('/static', express.static(__dirname + '/public'));
+
+
 //create route to send back a html file 
 router.get('/notes', (req, res) => {
-  let result = [];
-
-  result = notes;
-  return res.json(result);
+  res.send(db)
 });
 
 router.post('/notes', (req, res) => {
   //look at module project for setting an id
-  let noteId = uuid();
+  let noteId = uuidv4();
 
   let newNote = {
     id: noteId,
@@ -25,7 +23,7 @@ router.post('/notes', (req, res) => {
     text: req.body.text
   };
 
-  fs.readFile(db, 'utf8', (err, data) => {
+  fs.readFile('../db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
     //parse data from db array
     const noteArr = JSON.parse(data); 
