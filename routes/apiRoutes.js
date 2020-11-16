@@ -2,8 +2,8 @@ const db = require('../db/db.json');
 const fs = require('fs');
 const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
-const { route } = require('./htmlRoutes');
 
+//test
 
 //create route to send back a html file 
 router.get('/notes', (req, res) => {
@@ -38,6 +38,6 @@ router.post('/notes', (req, res) => {
   })
 });
 
-router.delete('./db/db.json', )
+
 
 module.exports = router;
