@@ -5,9 +5,6 @@ const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 
 
-
-
-
 //create route to send back a html file 
 router.get('/notes', (req, res) => {
   res.send(db)
@@ -23,22 +20,22 @@ router.post('/notes', (req, res) => {
     text: req.body.text
   };
 
-  fs.readFile('../db/db.json', 'utf8', (err, data) => {
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
     //parse data from db array
-    const noteArr = JSON.parse(data); 
+    const noteArr = JSON.parse(data);
     //push the new note into db array
     noteArr.push(newNote);
-
-    fs.writeFile(db, JSON.stringify(newNoteArr, null, 2), err => {
+    
+    fs.writeFile('./db/db.json', JSON.stringify(noteArr, null, 2), err => {
       if (err) throw new err;
 
       res.send(db);
 
-      alert('New Note Created!')
+      console.log('New Note Created!')
+      console.log(noteArr);
     })
   })
- 
 });
 
 
