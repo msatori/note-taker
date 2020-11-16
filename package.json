@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "check-node-version": "^4.0.3",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "uuid": "^8.3.1"
   }
 }
