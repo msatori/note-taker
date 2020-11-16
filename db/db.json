@@ -1,1 +1,11 @@
-"[\n  {\n    \"title\": \"Test Title\",\n    \"text\": \"Test text\"\n  },\n  {\n    \"id\": \"0d4104ab-d307-45a0-861d-b7e8125c10fd\",\n    \"title\": \"bob\",\n    \"text\": \"is home\"\n  },\n  {\n    \"id\": \"0b6beca4-2023-48d8-8495-b63cf58f9556\",\n    \"title\": \"timbob\",\n    \"text\": \"bobtim\"\n  }\n]"
+[
+  {
+    "title": "Test Title",
+    "text": "Test text"
+  },
+  {
+    "id": "090f9322-3b24-4e59-abeb-3baa398bd6fa",
+    "title": "bop",
+    "text": "boop"
+  }
+]
